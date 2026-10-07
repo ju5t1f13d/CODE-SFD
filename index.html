@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CODE: SFD</title>
+
+<style>
+    body {
+        margin: 0;
+        background: #ffd6e5;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Playfair Display, serif;
+    }
+
+    h1 {
+        color: #e61010;
+        font-size: 42px;
+        margin: 0 0 25px 0;
+    }
+
+    p {
+        font-size: 18px;
+        margin: 0 0 20px 0;
+    }
+
+    button {
+        background: #ffffff;
+        color: #000000;
+        border: 2px solid #000000;
+        padding: 12px 30px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+</style>
+</head>
+
+<body>
+    <h1>CODE: SFD</h1>
+    <p id="status">SFD: ENABLED</p>
+    <button id="toggleButton">TURN OFF</button>
+
+<script>
+    const toggleButton = document.getElementById('toggleButton');
+    const statusText = document.getElementById('status');
+
+    let enabled = true;
+
+    window.sfd.toggle(enabled);
+
+    toggleButton.addEventListener("click", () => {
+        if (enabled) {
+            statusText.textContent = "SFD: DISABLED";
+            toggleButton.textContent = "TURN ON";
+        } else {
+            statusText.textContent = "SFD: ENABLED";
+            toggleButton.textContent = "TURN OFF";
+        }
+        enabled = !enabled;
+        window.sfd.toggle(enabled);
+    });
+</script>
+</body>
+</html>
