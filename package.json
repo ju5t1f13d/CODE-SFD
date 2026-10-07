@@ -4,13 +4,25 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "build": "electron-builder"
+  },
+  "build": {
+  "appId": "com.code.sfd",
+  "productName": "CODE: SFD",
+  "win": {
+    "target": "zip"
+  },
+  "mac": {
+    "target": "zip"
+  }
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "electron": "^44.7.0"
+    "electron": "^44.7.0",
+    "electron-builder": "^26.15.3"
   }
 }
