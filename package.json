@@ -10,6 +10,7 @@
   "build": {
   "appId": "com.code.sfd",
   "productName": "CODE: SFD",
+  "publish": null,
   "win": {
     "target": "zip"
   },
